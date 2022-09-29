@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/mSubscribe"
+        android:layout_width="120dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:onClick="Subcribe"
+        android:text="subscribe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/mUnsubscribe"
+        android:layout_width="120dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="Unsubscribe"
+        android:text="unsubscribe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/mNewID"
+        android:layout_width="180dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="NewSiteID"
+        android:text="New Path ID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/mCapture"
+        android:layout_width="120dp"
+        android:layout_height="41dp"
+        android:onClick="Capture"
+        android:text="capture"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/mSiteIDtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="14dp"
+        android:text="Path ID:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mSiteID"
+        android:layout_width="120dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="14dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/mSiteIDtitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/mRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Floor Level"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mSiteIDtitle" />
+
+    <Button
+        android:id="@+id/mClear"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="Clear"
+        android:text="clear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mNewID" />
+
+    <Button
+        android:id="@+id/mConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_marginEnd="5dp"
+        android:onClick="Confirm"
+        android:text="comfirm"
+        app:layout_constraintEnd_toStartOf="@+id/mClear"
+        app:layout_constraintTop_toBottomOf="@+id/mNewID" />
+
+    <View
+        android:id="@+id/mUpperDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="85dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/mMiddleDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="100dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/mLowerDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="40dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/mBeaconDetected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="6dp"
+        android:text="Beacon Detected:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mCameraFrame" />
+
+    <TextView
+        android:id="@+id/mBeaconNumber"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toEndOf="@+id/mBeaconDetected"
+        app:layout_constraintTop_toTopOf="@+id/mMiddleDivider" />
+
+    <TextView
+        android:id="@+id/mReadings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="5dp"
+        android:text="BLE Readings:"
+        app:layout_constraintBottom_toTopOf="@+id/mLowerDivider"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/mReadingNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/mLowerDivider"
+        app:layout_constraintStart_toEndOf="@+id/mReadings" />
+
+    <TextView
+        android:id="@+id/mImages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Total Images:"
+        app:layout_constraintBottom_toTopOf="@+id/mLowerDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/mImageNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/mLowerDivider"
+        app:layout_constraintStart_toEndOf="@+id/mImages" />
+
+    <TextView
+        android:id="@+id/mRPs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="5dp"
+        android:text="Total RPs:"
+        app:layout_constraintBottom_toTopOf="@+id/mLowerDivider"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/mRPNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/mLowerDivider"
+        app:layout_constraintStart_toEndOf="@+id/mRPs" />
+
+    <FrameLayout
+        android:id="@+id/mCameraFrame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/mMiddleDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mUpperDivider">
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/AccXTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="6dp"
+        android:text="X:"
+        app:layout_constraintStart_toEndOf="@+id/mBeaconNumber"
+        app:layout_constraintTop_toBottomOf="@+id/mCameraFrame" />
+
+    <TextView
+        android:id="@+id/AccX"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toEndOf="@+id/AccXTitle"
+        app:layout_constraintTop_toBottomOf="@+id/mCameraFrame" />
+
+    <TextView
+        android:id="@+id/AccYTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="6dp"
+        android:text="Y:"
+        app:layout_constraintStart_toEndOf="@+id/AccX"
+        app:layout_constraintTop_toBottomOf="@+id/mCameraFrame" />
+
+    <TextView
+        android:id="@+id/AccY"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toEndOf="@+id/AccYTitle"
+        app:layout_constraintTop_toBottomOf="@+id/mCameraFrame" />
+
+    <TextView
+        android:id="@+id/AccZTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="6dp"
+        android:text="Z:"
+        app:layout_constraintStart_toEndOf="@+id/AccY"
+        app:layout_constraintTop_toBottomOf="@+id/mCameraFrame" />
+
+    <TextView
+        android:id="@+id/AccZ"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toEndOf="@+id/AccZTitle"
+        app:layout_constraintTop_toBottomOf="@+id/mCameraFrame" />
+</androidx.constraintlayout.widget.ConstraintLayout>
